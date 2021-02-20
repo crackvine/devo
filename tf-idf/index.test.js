@@ -1,4 +1,4 @@
-const { termFrequency } = require('docStats.js');
+const { termFrequency } = require('./docStats.js');
 
 const testDocOne = `Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:
 
@@ -16,4 +16,8 @@ test('should return the correct term frequency for "ipsum" within sample documen
 
 test('should return the correct term frequency for "lorem" within sample document one', () => {
   expect(termFrequency('lorem', testDocOne)).toBe(3);
+});
+
+test('should return the correct term frequency for "superman" within sample document one', () => {
+  expect(termFrequency('superman', testDocOne)).toBe(0);
 });
