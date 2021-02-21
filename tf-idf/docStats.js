@@ -19,11 +19,12 @@ const termFrequency = (term, doc) => (
 );
 
 // IDF: the logarithm of (total number of documents / the number of documents containing the term)
-const inverseDocumentFrequency = (term, docs) => {
+const inverseDocumentFrequency = (term, corpus) => {
   // Return null for non useful arguments
-  if (term.length === 0 || !Array.isArray(docs) || docs.length === 0) return null;
-  const docsContainingTerm = docs.filter((doc) => termCount(term, doc));
-  return Math.log(docs.length / docsContainingTerm.length);
+  if (term.length === 0 || !Array.isArray(corpus) || corpus.length === 0) return null;
+  const docsContainingTerm = corpus.filter((doc) => termCount(term, doc));
+  // Infinity not useful as a result when 0 docs contain the term; add 1 to denominator
+  return Math.log(corpus.length / (1 + docsContainingTerm.length));
 };
 
 module.exports = {

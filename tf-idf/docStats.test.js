@@ -68,13 +68,13 @@ describe('termFrequency tests', () => {
 
 describe('inverseDocumentFrequency tests', () => {
   test('should return expected inverse document frequency for "ipsum" in sample docs', () => {
-    expect(inverseDocumentFrequency('ipsum', [sampleDocOne, sampleDocTwo])).toBe(Math.log(1));
+    expect(inverseDocumentFrequency('ipsum', [sampleDocOne, sampleDocTwo])).toBe(Math.log(2 / 3));
   });
   test('should return expected inverse document frequency for "unknown" in sample docs', () => {
-    expect(inverseDocumentFrequency('unknown', [sampleDocOne, sampleDocTwo])).toBe(Math.log(2));
+    expect(inverseDocumentFrequency('unknown', [sampleDocOne, sampleDocTwo])).toBe(Math.log(2 / 2));
   });
   test('should return expected inverse document frequency for "superman" in sample docs', () => {
-    expect(inverseDocumentFrequency('superman', [sampleDocOne, sampleDocTwo])).toBe(Math.log(Infinity));
+    expect(inverseDocumentFrequency('superman', [sampleDocOne, sampleDocTwo])).toBe(Math.log(2 / 1));
   });
   test('should return null inverse document frequency for "" in sample docs', () => {
     expect(inverseDocumentFrequency('', [sampleDocOne, sampleDocTwo])).toBe(null);
