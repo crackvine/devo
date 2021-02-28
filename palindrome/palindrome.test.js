@@ -1,4 +1,9 @@
-const { reverseString1, reverseString2, isPalindrome1, isPalindrome2 } = require('./index');
+const {
+  reverseString1,
+  reverseString2,
+  isPalindrome1,
+  isPalindrome2,
+} = require('./palindrome');
 
 const testCases = [
   { original: 'Hello', reversed: 'olleH' },

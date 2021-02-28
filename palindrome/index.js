@@ -1,18 +1,16 @@
-/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
+const readline = require('readline');
+const { isPalindrome2 } = require('./palindrome');
 
-const reverseString1 = (str) => str.split('').reverse().join('');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  prompt: 'PALINDROME> ',
+});
 
-const reverseString2 = (str) => [...str].reverse().join('');
+rl.prompt();
 
-const isPalindrome1 = (str) => str === reverseString1(str);
-
-const isPalindrome2 = (str) => {
-  const arr = [...str];
-  const len = arr.length;
-  for (let i = 0; i < len / 2; i++) {
-    if (arr[i] !== arr[len - 1 - i]) return false;
-  }
-  return true;
-};
-
-module.exports = { reverseString1, reverseString2, isPalindrome1, isPalindrome2 };
+rl.on('line', (line) => {
+  const result = isPalindrome2(line);
+  console.log(`${line} ${result ? 'IS' : 'IS NOT'} a palindrome`);
+  rl.prompt();
+});
