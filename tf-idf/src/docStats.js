@@ -18,7 +18,7 @@ const termFrequency = (term, doc) => (
   wordCount(doc) > 0 ? termCount(term, doc) / wordCount(doc) : 0
 );
 
-// IDF: the logarithm of (total number of documents / the number of documents containing the term)
+// IDF: the log of (total number of documents / the number of documents containing the term plus 1)
 const inverseDocumentFrequency = (term, docs) => {
   // Return null for non useful arguments
   if (term.length === 0 || !Array.isArray(docs) || docs.length === 0) return null;
