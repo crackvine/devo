@@ -1,4 +1,4 @@
-const { reverseString1, isPalindrome } = require('./index');
+const { reverseString1, reverseString2, isPalindrome1, isPalindrome2 } = require('./index');
 
 const testCases = [
   { original: 'Hello', reversed: 'olleH' },
@@ -7,16 +7,30 @@ const testCases = [
   { original: '12121', reversed: '12121' },
   { original: 'Ññçv&$!k1¨Ç´{&$}[))(())]', reversed: ']))(())[}$&{´Ç¨1k!$&vçñÑ' },
   { original: '909/070/909', reversed: '909/070/909' },
+  { original: 'xXytXx', reversed: 'xXtyXx' },
+  { original: 'FggF', reversed: 'FggF' },
 ];
 
-test('should give inverse of sample strings', () => {
+test('reverseString1 should give inverse of sample strings', () => {
   testCases.forEach((testCase) => {
     expect(reverseString1(testCase.original)).toEqual(testCase.reversed);
   });
 });
 
-test('should correctly identify palindromes of sample set', () => {
+test('reverseString2 should give inverse of sample strings', () => {
   testCases.forEach((testCase) => {
-    expect(isPalindrome(testCase.original)).toBe(testCase.original === testCase.reversed);
+    expect(reverseString2(testCase.original)).toEqual(testCase.reversed);
+  });
+});
+
+test('isPalindrome1 should correctly identify palindromes of sample set', () => {
+  testCases.forEach((testCase) => {
+    expect(isPalindrome1(testCase.original)).toBe(testCase.original === testCase.reversed);
+  });
+});
+
+test('isPalindrome2 should correctly identify palindromes of sample set', () => {
+  testCases.forEach((testCase) => {
+    expect(isPalindrome2(testCase.original)).toBe(testCase.original === testCase.reversed);
   });
 });
