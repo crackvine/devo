@@ -3,6 +3,7 @@ const { setInterval } = require('timers');
 const argv = require('minimist')(process.argv.slice(2));
 
 const validateParams = require('./validateParams');
+const readCorpus = require('./readCorpus');
 const processCorpus = require('./processCorpus');
 const reportResults = require('./reportResults');
 
@@ -33,6 +34,7 @@ Items to display: ${listItemsToShow}
 
 // Loop process every scanPeriod seconds
 setInterval(() => {
-  const results = processCorpus(docPath, terms);
+  const corpus = readCorpus(docPath);
+  const results = processCorpus(corpus, terms);
   reportResults(results, listItemsToShow);
 }, scanPeriod * 1000);
