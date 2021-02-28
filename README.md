@@ -83,19 +83,19 @@ In this implementation:
 
 The term frequency TF is considered to be :
 
- ``number of times the word appears in the document / the total number of words in the document``
+ ``number of times the word appears in the document / total number of words in the document``
 
 The inverse document frequency IDF is considered to be (1 is added to the denominator to avoid divide by zero) :
 
-`` the total number of documents / (1 + the number of documents in which the term appears at least once)``
+`` ln (total number of documents / (1 + number of documents in which the term appears at least once))``
 
-The implementation could be improved by including pre-processing of the documents text to remove elements directly adjacent to words such as bibliography references etc.
+The implementation could be improved for example by only recalculating values if a new document is added, and including pre-processing of the document text content to remove elements directly adjacent to words such as bibliography references etc.
 
 ### Usage
 
 cd into the ``tf-idf`` folder
 
-Create a file named ``.env`` with the following content (default values I found useful during development):
+Create a file named ``.env`` with the following content (I found having default values useful during development):
 
 ```
 DEFAULT_DOCUMENTS_PATH='./documents'
@@ -116,7 +116,7 @@ Command line parameters as follows:
 
 |param|description|
 |---|---|
-|d|path to documents folder|
+|d|path to folder containing documents|
 |t|list of search terms, separated by spaces|
-|n|number of top docs to display (1 - 10)|
+|n|number of highest rated docs to display (1 - 10)|
 |p|period with which to scan the folder d (1 - 60 seconds)|
