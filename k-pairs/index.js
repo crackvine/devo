@@ -1,16 +1,7 @@
-/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
+const { kPairs1 } = require('./kPairs');
 
-const kPairs1 = (arr, K) => {
-  let count = 0;
-  for (let i = 0; i < arr.length; i++) {
-    const val1 = arr[i];
-    for (let j = i + 1; j < arr.length; j++) {
-      const val2 = arr[j];
-      if (val1 + val2 === K) count += 1;
-    }
-  }
+const argv = process.argv.slice(2);
+const K = +argv[0];
+const arr = argv[1].split(' ').map((x) => +(x.trim()));
 
-  return count;
-};
-
-module.exports = { kPairs1 };
+console.log(`k-complimentary pairs for K of ${K} and numbers ${JSON.stringify(arr)} --> ${kPairs1(arr, K)} pairs`);
