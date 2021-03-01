@@ -15,12 +15,12 @@ module.exports = (docPath, terms, scanPeriod, listItemsToShow) => {
     errors.push('PLEASE PROVIDE AN INTEGER BETWEEN 1 AND 60 (SECONDS) FOR SCAN PERIOD p');
   }
 
-  // Check scanPeriod is valid
+  // Check listItemsToShow is valid
   if (!Number.isInteger(+listItemsToShow) || listItemsToShow < 1 || listItemsToShow > 10) {
     errors.push('PLEASE PROVIDE AN INTEGER BETWEEN 1 AND 10 FOR NUMBER OF ITEMS TO SHOW n');
   }
 
-  // Terms parameter is a space separated list of words
+  // Check search terms have been provided
   if (!terms.length) {
     errors.push('NO SEARCH ITEMS PROVIDED');
   }

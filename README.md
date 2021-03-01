@@ -12,7 +12,7 @@ Write an efficient algorithm to check if a string is a palindrome. A string is a
 
 ### Notes
 
-O(n<sup></sup>)) time complexity since the array of characters is only traversed a single time
+O(n<sup></sup>)) time complexity since the array of characters is only traversed a single time (function isPalindrome2)
 
 ### Usage
 
