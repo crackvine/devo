@@ -55,17 +55,19 @@ const expectedResultTermsThree = [
   { name: 'sampleDocThree', totalTfIdf: ((1 / 40) * Math.log(3 / 2)) + ((1 / 40) * Math.log(3 / 2)) },
 ];
 
-test('should calculate expected totalTfIdf for sample corpus and termsOne', () => {
-  const results = processCorpus(corpus, termsOne);
-  expect(results).toStrictEqual(expectedResultTermsOne);
-});
+describe('processCorpus tests', () => {
+  test('should calculate expected totalTfIdf for sample corpus and termsOne', () => {
+    const results = processCorpus(corpus, termsOne);
+    expect(results).toStrictEqual(expectedResultTermsOne);
+  });
 
-test('should calculate expected totalTfIdf for sample corpus and termsTwo', () => {
-  const results = processCorpus(corpus, termsTwo);
-  expect(results).toStrictEqual(expectedResultTermsTwo);
-});
+  test('should calculate expected totalTfIdf for sample corpus and termsTwo', () => {
+    const results = processCorpus(corpus, termsTwo);
+    expect(results).toStrictEqual(expectedResultTermsTwo);
+  });
 
-test('should calculate expected totalTfIdf for sample corpus and termsThree', () => {
-  const results = processCorpus(corpus, termsThree);
-  expect(results).toStrictEqual(expectedResultTermsThree);
+  test('should calculate expected totalTfIdf for sample corpus and termsThree', () => {
+    const results = processCorpus(corpus, termsThree);
+    expect(results).toStrictEqual(expectedResultTermsThree);
+  });
 });

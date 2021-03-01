@@ -9,7 +9,6 @@ const reportResults = require('./reportResults');
 
 // Command line arguments and defaults
 const docPath = argv?.d ?? process.env.DEFAULT_DOCUMENTS_PATH;
-console.log(docPath);
 const termsParam = argv?.t ?? '';
 const terms = termsParam.split(' ').map((term) => term.trim()).filter((term) => term.length);
 const scanPeriod = argv?.p ?? process.env.DEFAULT_SCAN_PERIOD;
