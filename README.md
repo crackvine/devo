@@ -1,4 +1,4 @@
-# Devo Coding Challenges
+# Coding Challenges
 
 ## 1. Palindrome
 
