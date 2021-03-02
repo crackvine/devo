@@ -36,7 +36,7 @@ Given Array A, pair (i, j) is K- complementary if K = A[i] + A[j];
 
 ### Notes
 
-In this implementation each pair is only counted once. 
+In this implementation each pair on every occurance (for example, K=3 and [3,3,3] yields 3 pairs). 
 
 O(n<sup>2</sup>) time complexity due to the nested loop
 ### Usage
